@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 
 class Header extends Component {
-
-    //this.state
-    
+    constructor() {
+        super();
+        this.state = {
+            stateText: "This is state Text",
+            counter: 0
+        }
+    }
 
      something = () => {
-
-        console.log("Clicked");
+        this.setState({counter: this.state.counter+1})
+        console.log("Clicked: " +  this.state.counter + " times!");
     }
 
   render() {
     return (
-      <div classNamer = "header">
+      <div className = "header">
           <p>{this.props.title}</p>
-          <button onClick={this.something}>Click Me!</button>
+          <button onClick={this.something}>Clicked Me {this.state.counter} times!</button>
       </div>
     );
   }
