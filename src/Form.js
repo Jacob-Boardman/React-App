@@ -7,7 +7,7 @@ class Form extends Component {
         this.state = {
             value1: '',
             value2: '',
-            value3: ""
+            value3: ''
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -16,24 +16,19 @@ class Form extends Component {
     }
 
     handleChange(event) {
-        console.log(event.target);
-            //value1: event.target.value,
-            if(event.target.id === "firstname") {
+        if (event.target.id === "firstname") {
 
-                this.setState({
-                    value1: event.target.value
-                    });
-            } else{
+            this.setState({
+                value1: event.target.value
+            });
+        } else {
             this.setState({
                 value2: event.target.value
-             });
-            }
+            });
+        }
     }
 
     handleSubmit(event) {
-
-        console.log("first name is " + this.state.value1);
-        console.log("second name is " + this.state.value2);
         this.setState({ value3: this.state.value1 + " " + this.state.value2 })
         event.preventDefault();
     }
